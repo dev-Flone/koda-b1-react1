@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const App = () => {
   const [angka, setAngka] = useState(0);
-
   function Tambah() {
     setAngka(angka + 1);
   }
@@ -11,22 +10,21 @@ const App = () => {
   }
   return (
     <>
-      <h1>Angka: {angka}</h1>
-      <div className="flex gap-3">
-        <button onClick={Tambah} className="border bg-amber-400">
-          Tambah
-        </button>
-        <button onClick={Kurang} className="border bg-cyan-400">
-          Kurang
-        </button>
+      <div className="flex items-center flex-col bg-black gap-4 p-5 min-h-screen justify-center">
+        <h1 className="text-white">Angka: {angka}</h1>
+        <div className="flex gap-3">
+          <button onClick={Tambah} className="bg-amber-300 rounded-md p-2">
+            Tambah
+          </button>
+          <button
+            onClick={Kurang}
+            className="bg-cyan-400 rounded-md p-2"
+            disabled={angka === 0}
+          >
+            Kurang
+          </button>
+        </div>
       </div>
-      <br />
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-        voluptatibus accusamus modi distinctio, natus facilis, sunt laborum
-        voluptas iusto deserunt quibusdam et earum itaque eligendi quas quidem
-        dolores incidunt accusantium.
-      </p>
     </>
   );
 };
